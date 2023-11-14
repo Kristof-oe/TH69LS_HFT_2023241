@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TH69LS_HFT_2023241.Models
 {
-    internal class Player
+    public class Player
     {
         string Player_Name { get; set; }
         string Player_ID { get; set; }
