@@ -19,6 +19,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{C1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{7D5993D0-7694-4C0C-913C-5FEC06F800ED}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C75D6B1C-23D4-4E31-AFE5-AE3261F1F69A}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TH69LS_HFT_2023241.Endpoint", "ABC123_HFT_2023241.Endpoint\TH69LS_HFT_2023241.Endpoint.csproj", "{F0A2B7BD-CABC-4BB2-911B-0DD5AF4B3EA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +52,10 @@ Global
 		{C53A6DCA-95F6-4A5B-9F9B-6FAA89EC9EED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C53A6DCA-95F6-4A5B-9F9B-6FAA89EC9EED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C53A6DCA-95F6-4A5B-9F9B-6FAA89EC9EED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0A2B7BD-CABC-4BB2-911B-0DD5AF4B3EA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0A2B7BD-CABC-4BB2-911B-0DD5AF4B3EA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0A2B7BD-CABC-4BB2-911B-0DD5AF4B3EA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0A2B7BD-CABC-4BB2-911B-0DD5AF4B3EA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +66,7 @@ Global
 		{05378914-D6D4-4C06-9589-B86155137087} = {3D9D5881-76C4-4E7B-B4F3-6D951E16026F}
 		{0A727591-A684-43FC-93F4-67F1B6268FD2} = {3D9D5881-76C4-4E7B-B4F3-6D951E16026F}
 		{C53A6DCA-95F6-4A5B-9F9B-6FAA89EC9EED} = {3D9D5881-76C4-4E7B-B4F3-6D951E16026F}
+		{F0A2B7BD-CABC-4BB2-911B-0DD5AF4B3EA7} = {3D9D5881-76C4-4E7B-B4F3-6D951E16026F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1B361C9A-4B6F-4CB9-BEC4-D6DCC099D025}
