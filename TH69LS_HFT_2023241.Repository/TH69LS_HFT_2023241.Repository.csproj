@@ -5,6 +5,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Match.mdf" />
+    <None Remove="Matches.mdf" />
+    <None Remove="Matches_log.ldf" />
+    <None Remove="Match_log.ldf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Matches.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Matches_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TH69LS_HFT_2023241.Models\TH69LS_HFT_2023241.Models.csproj" />
   </ItemGroup>
 	
