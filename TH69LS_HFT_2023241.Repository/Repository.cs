@@ -8,29 +8,29 @@ namespace TH69LS_HFT_2023241.Repository
 {
     public abstract class Repository<T> : IRepository<T> where T : class
     {
+        protected CatDbContext x;
+        public Repository(CatDbContext x)
+        {
+                this.x = x;
+        }
         public void Create(T item)
         {
-            throw new NotImplementedException();
+            x.Set<T>().Add(item);
+            x.SaveChanges();
         }
 
         public void Delete(int ID)
         {
-            throw new NotImplementedException();
-        }
-
-        public T Read(int ID)
-        {
-            throw new NotImplementedException();
+            x.Set<T>().Remove(Read(ID));
+            x.SaveChanges();
         }
 
         public IQueryable<T> ReadAll()
         {
-            throw new NotImplementedException();
+            return x.Set<T>();
         }
 
-        public void Update(T item)
-        {
-            throw new NotImplementedException();
-        }
+        abstract public T Read(int ID);
+        abstract public void Update(T item);
     }
 }

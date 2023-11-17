@@ -16,7 +16,7 @@ using static System.Formats.Asn1.AsnWriter;
 
 namespace TH69LS_HFT_2023241.Repository
 {
-    internal class MatchDbContext:DbContext
+    public class CatDbContext:DbContext
     {
        public  DbSet<Cat_Owner> Cat_Owners {  get; set; } 
        public  DbSet<Cat> Cats {  get; set; }
