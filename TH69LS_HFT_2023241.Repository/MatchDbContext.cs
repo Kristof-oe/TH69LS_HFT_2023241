@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Numerics;
+using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -68,7 +69,31 @@ namespace TH69LS_HFT_2023241.Repository
             var PatrickEwing = new Cat_Sitter() { ID = 4, Sitter_Name = "Patrick Ewing", Sitter_Age = 31, Its_salary_month = 430000, Is_professional = false };
             var WalterMcCarty = new Cat_Sitter() { ID = 5, Sitter_Name = "Walter McCarty", Sitter_Age = 29, Its_salary_month = 390000, Is_professional = true };
 
-            modelBuilder.Entity<Cat_Sitter>().HasData(AllanHouston, ChrisJent, LarryJohnson, PatrickEwing, WalterMcCarty);
+            modelBuilder.Entity<Cat_Sitter>().HasData(AllanHouston, ChrisJent, PatrickEwing, LarryJohnson, WalterMcCarty);
+
+            modelBuilder.Entity<Cat>().HasData(new Cat[]
+           {
+                new Cat(){ID=1,Breed="Abyssinian",Cat_Name="Cirmi",Is_Mixed=false,Cat_Owner_ID= ToniKukoc.ID,Cat_Sitter_ID=AllanHouston.ID},
+                new Cat(){ID=2,Breed="British Shorthair",Cat_Name="Gallus",Is_Mixed=false,Cat_Owner_ID= LucLongley.ID,Cat_Sitter_ID=ChrisJent.ID},
+                new Cat(){ID=3,Breed="Burmese",Cat_Name="Bajusz",Is_Mixed=true,Cat_Owner_ID= DennisRodman.ID,Cat_Sitter_ID=ChrisJent.ID},
+                new Cat(){ID=4,Breed="Persian",Cat_Name="Lola",Is_Mixed=false,Cat_Owner_ID= MichaelJordan.ID,Cat_Sitter_ID=PatrickEwing.ID},
+                new Cat(){ID=5,Breed="Cornish Rex",Cat_Name="Grácia",Is_Mixed=true,Cat_Owner_ID= ScottiePippen.ID,Cat_Sitter_ID=PatrickEwing.ID},
+                new Cat(){ID=6,Breed="Devon Rex",Cat_Name="Nyau",Is_Mixed=true,Cat_Owner_ID= RonHarper.ID,Cat_Sitter_ID=PatrickEwing.ID},
+                new Cat(){ID=7,Breed="Himalayan",Cat_Name="Tappancs",Is_Mixed=false,Cat_Owner_ID= SteveKerr.ID,Cat_Sitter_ID=PatrickEwing.ID},
+                new Cat(){ID=8,Breed="Maine Coon",Cat_Name="Tik-Tak",Is_Mixed=true,Cat_Owner_ID= MuggsyBogues.ID,Cat_Sitter_ID=PatrickEwing.ID},
+                new Cat(){ID=9,Breed="Manx",Cat_Name="Vörös",Is_Mixed=false,Cat_Owner_ID= ScottBurrell.ID,Cat_Sitter_ID=LarryJohnson.ID},
+                new Cat(){ID=10,Breed="Russian Blue",Cat_Name="Ringó",Is_Mixed=false,Cat_Owner_ID= TomChambers.ID,Cat_Sitter_ID=ChrisJent.ID},
+                new Cat(){ID=11,Breed="Scottish Fold",Cat_Name="Rúfusz",Is_Mixed=false,Cat_Owner_ID= DellCurry.ID,Cat_Sitter_ID=ChrisJent.ID},
+                new Cat(){ID=12,Breed="Siamese",Cat_Name="Parádé",Is_Mixed=true,Cat_Owner_ID= SteveKerr.ID,Cat_Sitter_ID=ChrisJent.ID},
+                new Cat(){ID=13,Breed=" Sphynx",Cat_Name="Mendi",Is_Mixed=true,Cat_Owner_ID= RonHarper.ID,Cat_Sitter_ID=LarryJohnson.ID},
+                new Cat(){ID=14,Breed="Turkish Angora",Cat_Name="Taréj",Is_Mixed=false,Cat_Owner_ID= DennisRodman.ID,Cat_Sitter_ID=PatrickEwing.ID},
+                new Cat(){ID=15,Breed="Turkish Van",Cat_Name="Robin",Is_Mixed=true,Cat_Owner_ID= ScottiePippen.ID,Cat_Sitter_ID=PatrickEwing.ID},
+                new Cat(){ID=16,Breed="British Shorthair",Cat_Name="Rumba",Is_Mixed=true,Cat_Owner_ID= DennisRodman.ID,Cat_Sitter_ID=WalterMcCarty.ID},
+                new Cat(){ID=17,Breed="Burmese",Cat_Name="Suta",Is_Mixed=true,Cat_Owner_ID= ToniKukoc.ID,Cat_Sitter_ID=WalterMcCarty.ID},
+                new Cat(){ID=18,Breed="Persian",Cat_Name="Mendi",Is_Mixed=false,Cat_Owner_ID= MichaelJordan.ID,Cat_Sitter_ID=AllanHouston.ID},
+                new Cat(){ID=19,Breed="Manx",Cat_Name="Husika",Is_Mixed=false,Cat_Owner_ID= SteveKerr.ID,Cat_Sitter_ID=WalterMcCarty.ID},
+                new Cat(){ID=20,Breed="Abyssinian",Cat_Name="Lizi",Is_Mixed=true,Cat_Owner_ID= ScottBurrell.ID,Cat_Sitter_ID=AllanHouston.ID}
+           });
 
         }
      }

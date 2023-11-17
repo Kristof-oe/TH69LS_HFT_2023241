@@ -18,7 +18,7 @@ namespace TH69LS_HFT_2023241.Models
         public string Breed { get; set; }
         [StringLength(50)]
         [Required]
-        public string Name { get; set; }
+        public string Cat_Name { get; set; }
         public bool Is_Mixed { get; set; }
         public int Cat_Owner_ID { get; set; }
         public int Cat_Sitter_ID { get; set; }
