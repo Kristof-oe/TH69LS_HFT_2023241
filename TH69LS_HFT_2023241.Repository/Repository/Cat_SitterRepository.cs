@@ -16,12 +16,18 @@ namespace TH69LS_HFT_2023241.Repository.Repository
 
         public override Cat_Sitter Read(int ID)
         {
-            throw new NotImplementedException();
+            return x.Cat_Sitters.FirstOrDefault(x => x.ID == ID);
         }
 
         public override void Update(Cat_Sitter item)
         {
-            throw new NotImplementedException();
+            var old = Read(item.ID);
+            foreach (var prop in old.GetType().GetProperties())
+            {
+                prop.SetValue(old,prop.GetValue(item));
+            }
+            x.SaveChanges();
+
         }
     }
 }
