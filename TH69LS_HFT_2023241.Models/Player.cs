@@ -17,8 +17,11 @@ namespace TH69LS_HFT_2023241.Models
         [StringLength(50)]
         [Required]
         public string Player_Name { get; set; }
+        [Range(0,100)]
         public int Player_Stat { get; set; }
+        [Range(180, 250)]
         public int Player_Height { get; set; }
+        public int TeamID { get; set; }
         [JsonIgnore]
         [NotMapped]
         public virtual ICollection<Team> teams { get; set; }

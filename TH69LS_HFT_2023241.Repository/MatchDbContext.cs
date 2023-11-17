@@ -28,6 +28,14 @@ namespace TH69LS_HFT_2023241.Repository
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Player>()
+                .HasOne(x => x.Team)
+                .WithMany(x => x.players)
+                .HasForeignKey(x => x.TeamID)
+                .OnDelete(DeleteBehavior.Cascade);
+
+
+            
             
 
 
