@@ -2,7 +2,7 @@
 
 namespace TH69LS_HFT_2023241.Repository
 {
-    public class PlayerRepository
+    public class Cat_OwnerRepository
     {
     }
 }
