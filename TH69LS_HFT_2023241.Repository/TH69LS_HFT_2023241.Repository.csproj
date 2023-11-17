@@ -1,21 +1,21 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Cat.mdf" />
+    <None Remove="Cat_log.ldf" />
     <None Remove="Match.mdf" />
-    <None Remove="Matches.mdf" />
-    <None Remove="Matches_log.ldf" />
     <None Remove="Match_log.ldf" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Matches.mdf">
+    <Content Include="Cat.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Matches_log.ldf">
+    <Content Include="Cat_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

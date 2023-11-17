@@ -13,29 +13,33 @@ namespace TH69LS_HFT_2023241.Repository
 {
     internal class MatchDbContext:DbContext
     {
-       public  DbSet<Match> Matches {  get; set; } 
-       public  DbSet<Player> Players {  get; set; }
-       public  DbSet<Team> Teams {  get; set; }
+       public  DbSet<Cat_Owner> Cat_Owners {  get; set; } 
+       public  DbSet<Cat> Cats {  get; set; }
+       public  DbSet<Cat_Sitter> Cat_Sitters {  get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
             if (!builder.IsConfigured)
             {
-                string conn = @"Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename =|DataDirectory|\Match.mdf; Integrated Security = True";
+                string conn = @"Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename =|DataDirectory|\Cat.mdf; Integrated Security = True";
                     builder.UseLazyLoadingProxies()
                     .UseInMemoryDatabase(conn);
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Player>()
-                .HasOne(x => x.Team)
-                .WithMany(x => x.players)
-                .HasForeignKey(x => x.TeamID)
+            modelBuilder.Entity<Cat>()
+                .HasOne(x => x.Cat_owner)
+                .WithMany(x => x.Cats)
+                .HasForeignKey(x => x.Cat_Owner_ID)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            modelBuilder.Entity<Cat>()
+                    .HasOne(x => x.Cat_sitter)
+                    .WithMany(x => x.Cats)
+                    .HasForeignKey(x => x.Cat_Sitter_ID)
+                .OnDelete(DeleteBehavior.Cascade);
 
-            
             
 
 

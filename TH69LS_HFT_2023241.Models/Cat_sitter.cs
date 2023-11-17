@@ -9,22 +9,22 @@ using System.Text.Json.Serialization;
 
 namespace TH69LS_HFT_2023241.Models
 {
-    public class Team
+    public class Cat_Sitter
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
         [StringLength(50)]
         [Required]
-        public int Team_Name{ get; set; }
-        public int Team_born_year { get; set; }
-        [NotMapped]
-        public virtual ICollection<Player> players { get; set; }  
-        public virtual Player player { get; set; }
-        [NotMapped]
+        public string Sitter_Name { get; set; }
+        [Range(20,45)]
+        public int Sitter_Age { get; set;}
+        [Range(150000,450000)]
+        public int Its_salary_month { get; set; }
+        public bool Is_professional { get; set; }
         [JsonIgnore]
-        public virtual ICollection<Match> matches { get; set; }
-        public virtual Match match { get; set; }
+        [NotMapped]
+        public virtual ICollection<Cat> Cats { get; set; }
 
     }
 }
