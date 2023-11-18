@@ -22,13 +22,18 @@ namespace TH69LS_HFT_2023241.Repository
        public  DbSet<Cat> Cats {  get; set; }
        public  DbSet<Cat_Sitter> Cat_Sitters {  get; set; }
 
+        public CatDbContext()
+        {
+                this.Database.EnsureCreated(); 
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
             if (!builder.IsConfigured)
             {
-                string conn = @"Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename =|DataDirectory|\Cat.mdf; Integrated Security = True";
+                
                     builder.UseLazyLoadingProxies()
-                    .UseInMemoryDatabase(conn);
+                    .UseInMemoryDatabase("cat");
+                
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
