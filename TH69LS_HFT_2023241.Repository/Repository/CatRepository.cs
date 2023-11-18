@@ -7,7 +7,7 @@ using TH69LS_HFT_2023241.Models;
 
 namespace TH69LS_HFT_2023241.Repository.Repository
 {
-    internal class CatRepository:Repository<Cat>, IRepository<Cat>
+    public class CatRepository:Repository<Cat>, IRepository<Cat>
     {
         public CatRepository(CatDbContext x) : base(x)
         {

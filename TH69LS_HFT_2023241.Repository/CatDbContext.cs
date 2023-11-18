@@ -90,7 +90,7 @@ namespace TH69LS_HFT_2023241.Repository
                 new Cat(){ID=10,Breed="Russian Blue",Cat_Name="Ringó",Is_Mixed=false,Cat_Owner_ID= TomChambers.ID,Cat_Sitter_ID=ChrisJent.ID},
                 new Cat(){ID=11,Breed="Scottish Fold",Cat_Name="Rúfusz",Is_Mixed=false,Cat_Owner_ID= DellCurry.ID,Cat_Sitter_ID=ChrisJent.ID},
                 new Cat(){ID=12,Breed="Siamese",Cat_Name="Parádé",Is_Mixed=true,Cat_Owner_ID= SteveKerr.ID,Cat_Sitter_ID=ChrisJent.ID},
-                new Cat(){ID=13,Breed=" Sphynx",Cat_Name="Mendi",Is_Mixed=true,Cat_Owner_ID= RonHarper.ID,Cat_Sitter_ID=LarryJohnson.ID},
+                new Cat(){ID=13,Breed="Sphynx",Cat_Name="Mendi",Is_Mixed=true,Cat_Owner_ID= RonHarper.ID,Cat_Sitter_ID=LarryJohnson.ID},
                 new Cat(){ID=14,Breed="Turkish Angora",Cat_Name="Taréj",Is_Mixed=false,Cat_Owner_ID= DennisRodman.ID,Cat_Sitter_ID=PatrickEwing.ID},
                 new Cat(){ID=15,Breed="Turkish Van",Cat_Name="Robin",Is_Mixed=true,Cat_Owner_ID= ScottiePippen.ID,Cat_Sitter_ID=PatrickEwing.ID},
                 new Cat(){ID=16,Breed="British Shorthair",Cat_Name="Rumba",Is_Mixed=true,Cat_Owner_ID= DennisRodman.ID,Cat_Sitter_ID=WalterMcCarty.ID},
