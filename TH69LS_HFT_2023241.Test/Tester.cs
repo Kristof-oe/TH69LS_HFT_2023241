@@ -74,7 +74,42 @@ namespace TH69LS_HFT_2023241.Test
                 }
             };
 
-            
+            List<Cat> dogs = new List<Cat>()
+            {
+                new Cat()
+                {
+                 ID=1,
+                 Cat_Owner_ID=1,
+                 Cat_Sitter_ID=1,
+                 Cat_Name="Cirmos",
+                 Breed="Siamese"
+                },
+                new Cat()
+                {
+                 ID=2,
+                 Cat_Owner_ID=2,
+                 Cat_Sitter_ID=1,
+                 Cat_Name="Kázmér",
+                 Breed="Burmese"
+                },
+                new Cat()
+                {
+                  ID=3,
+                 Cat_Owner_ID=2,
+                 Cat_Sitter_ID=2,
+                 Cat_Name="Pötyi",
+                 Breed="Sphynx"
+                },
+                new Cat()
+                {
+                ID=4,
+                 Cat_Owner_ID=2,
+                 Cat_Sitter_ID=2,
+                 Cat_Name="Álmos",
+                 Breed="Persian"
+                }
+            };
+
         }
 
     }
