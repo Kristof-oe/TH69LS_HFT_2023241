@@ -24,7 +24,35 @@ namespace TH69LS_HFT_2023241.Test
             var MockCat_OwnerRepo = new Mock<IRepository<Cat_Owner>>();
             cat_OwnerLogic = new Cat_OwnerLogic(MockCat_OwnerRepo.Object);
 
-            
+            List<Cat_Owner> cowners = new List<Cat_Owner>()
+            {
+                new Cat_Owner()
+                 {
+                ID = 1,
+                Owner_Name = "Eva",
+                Owner_Age = 70,
+                Is_Married = true,
+                Nationality="Urugvay"
+
+                 },
+                new Cat_Owner()
+                {
+                 ID = 1,
+                Owner_Name = "Johhny",
+                Owner_Age = 54,
+                Is_Married = false,
+                Nationality="Hungary"
+                },
+                new Cat_Owner()
+                {
+                ID = 1,
+                Owner_Name = "Adam",
+                Owner_Age = 23,
+                Is_Married = true,
+                Nationality="German"
+                }
+            };
+
         }
 
     }
