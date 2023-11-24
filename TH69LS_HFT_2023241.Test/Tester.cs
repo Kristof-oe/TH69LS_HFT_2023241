@@ -37,7 +37,7 @@ namespace TH69LS_HFT_2023241.Test
                  },
                 new Cat_Owner()
                 {
-                 ID = 1,
+                 ID = 2,
                 Owner_Name = "Johhny",
                 Owner_Age = 54,
                 Is_Married = false,
@@ -45,7 +45,7 @@ namespace TH69LS_HFT_2023241.Test
                 },
                 new Cat_Owner()
                 {
-                ID = 1,
+                ID = 3,
                 Owner_Name = "Adam",
                 Owner_Age = 23,
                 Is_Married = true,
@@ -53,6 +53,28 @@ namespace TH69LS_HFT_2023241.Test
                 }
             };
 
+
+            List<Cat_Sitter> catsitter = new List<Cat_Sitter>()
+            {
+                new Cat_Sitter()
+                {
+                ID = 1,
+                Sitter_Name = "Károly",
+                Sitter_Age =35,
+                Its_salary_month = 190000,
+                Is_professional=true,
+                },
+                new Cat_Sitter()
+                {
+                 ID = 2,
+                Sitter_Name = "Áron",
+                Sitter_Age =20,
+                Its_salary_month = 310000,
+                Is_professional=false,
+                }
+            };
+
+            
         }
 
     }
