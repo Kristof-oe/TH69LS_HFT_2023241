@@ -4,7 +4,7 @@ using TH69LS_HFT_2023241.Models;
 
 namespace TH69LS_HFT_2023241.Logic
 {
-    internal interface ICat_OwnerLogic
+    public interface ICat_OwnerLogic
     {
         int CatPricePerMonth(int ID);
         void Create(Cat_Owner item);
