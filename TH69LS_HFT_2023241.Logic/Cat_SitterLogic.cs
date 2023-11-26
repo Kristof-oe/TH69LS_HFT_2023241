@@ -10,7 +10,7 @@ namespace TH69LS_HFT_2023241.Logic
 {
     public class Cat_SitterLogic : ICat_SitterLogic
     {
-        IRepository<Cat_Sitter> repo;
+        readonly IRepository<Cat_Sitter> repo;
 
         public Cat_SitterLogic(IRepository<Cat_Sitter> repo)
         {
@@ -44,7 +44,7 @@ namespace TH69LS_HFT_2023241.Logic
             return this.repo.Read(ID);
         }
 
-        public System.Linq.IQueryable<Cat_Sitter> ReadAll()
+        public IQueryable<Cat_Sitter> ReadAll()
         {
             return this.repo.ReadAll();
         }

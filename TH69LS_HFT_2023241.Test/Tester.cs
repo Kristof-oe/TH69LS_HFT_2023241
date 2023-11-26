@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using TH69LS_HFT_2023241.Logic;
 using TH69LS_HFT_2023241.Models;
 using TH69LS_HFT_2023241.Repository;
@@ -31,7 +32,7 @@ namespace TH69LS_HFT_2023241.Test
                 ID = 1,
                 Owner_Name = "Eva",
                 Owner_Age = 70,
-                Is_Married = true,
+                Is_Married = false,
                 Nationality="Urugvay"
 
                  },
@@ -54,7 +55,7 @@ namespace TH69LS_HFT_2023241.Test
             };
 
 
-            List<Cat_Sitter> catsitter = new List<Cat_Sitter>()
+            List<Cat_Sitter> catsitters = new List<Cat_Sitter>()
             {
                 new Cat_Sitter()
                 {
@@ -74,7 +75,7 @@ namespace TH69LS_HFT_2023241.Test
                 }
             };
 
-            List<Cat> dogs = new List<Cat>()
+            List<Cat> cats = new List<Cat>()
             {
                 new Cat()
                 {
@@ -94,7 +95,7 @@ namespace TH69LS_HFT_2023241.Test
                 },
                 new Cat()
                 {
-                  ID=3,
+                 ID=3,
                  Cat_Owner_ID=2,
                  Cat_Sitter_ID=2,
                  Cat_Name="Pötyi",
@@ -110,7 +111,75 @@ namespace TH69LS_HFT_2023241.Test
                 }
             };
 
+           MockCatRepo.Setup((t) => t.ReadAll()).Returns(cats.AsQueryable());
+           MockSitterlRepo.Setup((t) => t.ReadAll()).Returns(catsitters.AsQueryable());
+           MockCat_OwnerRepo.Setup((t) => t.ReadAll()).Returns(cowners.AsQueryable());
+
+
+        }
+        [Test]
+        public void CreateCatTest()
+        {
+            Assert.That(() => catLogic.Create(new Cat()
+            {
+                Cat_Name = null
+
+            }), Throws.Nothing);
+
+        }
+        [Test]
+        public void DeleteCatTest()
+        {
+            Assert.That(() => catLogic.Delete(52), Throws.Exception);
+        }
+        [Test]
+        public void CreateCat_OwnerTest()
+        {
+            Assert.That(()=>cat_OwnerLogic.Create(new Cat_Owner()
+            {
+                Owner_Name=null
+            }),Throws.Nothing);
         }
 
+        public void DeleteCat_OwnerTest()
+        {
+            Assert.That(() => catLogic.Delete(52), Throws.Exception);
+        }
+
+        [Test]
+        public void ReadCat_OwnerTest()
+        {
+            Assert.That(() => cat_OwnerLogic.Read(0), Throws.Exception);
+        }
+        [Test]
+        public void RetiredPerson()
+        {
+            var r = cat_OwnerLogic.RetiredPerson().ToArray();
+            Assert.That(r[0].Owner_Name, Is.EqualTo("Eva"));
+        }
+
+        [Test]
+        public void MarriedOwner()
+        {
+            var r = cat_OwnerLogic.MarriedOwner().ToArray();
+            Assert.That(r[0].Owner_Name, Is.EqualTo("Adam"));
+        }
+        [Test]
+        public void AllCatBreed()
+        {
+            string[] b = new string[] { "Siamese, Burmese, Sphynx, Persian" };
+            var r = catLogic.AllCatBreed().ToArray();
+            Assert.That(r, Is.EqualTo(b));
+        }
+        [Test]
+        public void ReadCatTest()
+        {
+            Assert.That(() => catLogic.Read(0), Throws.Exception);
+        }
+        [Test]
+        public void Cat_sitterCreated()
+        {
+            Assert.That(() => cat_SitterLogic.Delete(0), Throws.Exception);
+        }
     }
 }

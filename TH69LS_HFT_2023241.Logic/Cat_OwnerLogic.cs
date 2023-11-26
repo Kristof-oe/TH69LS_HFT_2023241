@@ -10,7 +10,7 @@ namespace TH69LS_HFT_2023241.Logic
 {
     public class Cat_OwnerLogic : ICat_OwnerLogic
     {
-        IRepository<Cat_Owner> repo;
+        readonly IRepository<Cat_Owner> repo;
 
         public Cat_OwnerLogic(IRepository<Cat_Owner> repo)
         {
@@ -44,7 +44,7 @@ namespace TH69LS_HFT_2023241.Logic
             return this.repo.Read(ID);
         }
 
-        public System.Linq.IQueryable<Cat_Owner> ReadAll()
+        public IQueryable<Cat_Owner> ReadAll()
         {
             return this.repo.ReadAll();
         }

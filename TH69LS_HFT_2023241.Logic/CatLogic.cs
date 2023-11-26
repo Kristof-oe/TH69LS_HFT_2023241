@@ -8,7 +8,7 @@ namespace TH69LS_HFT_2023241.Logic
 {
     public class CatLogic : ICatLogic
     {
-        IRepository<Cat> repo;
+        readonly IRepository<Cat> repo;
 
         public CatLogic(IRepository<Cat> repo)
         {
@@ -42,7 +42,7 @@ namespace TH69LS_HFT_2023241.Logic
             return this.repo.Read(ID);
         }
 
-        public System.Linq.IQueryable<Cat> ReadAll()
+        public IQueryable<Cat> ReadAll()
         {
             return this.repo.ReadAll();
         }
@@ -51,7 +51,7 @@ namespace TH69LS_HFT_2023241.Logic
         {
             if (this.repo.Read(item.ID) == null)
             {
-                throw new ArgumentException($"We have not found any cat with this ID: {item.ID}");
+                throw new ArgumentException($"We have not found any cat with this ID: {item}");
             }
             this.repo.Update(item);
         }
