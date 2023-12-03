@@ -177,6 +177,12 @@ namespace TH69LS_HFT_2023241.Test
             Assert.That(r[0].Cat_Name, Is.EqualTo("Cirmos"));
         }
         [Test]
+        public void Salary()
+        {
+            var r = cat_SitterLogic.Salary().ToArray();
+            Assert.That(r[0].Sitter_Name, Is.EqualTo("Áron"));
+        }
+        [Test]
         public void ReadCatTest()
         {
             Assert.That(() => catLogic.Read(0), Throws.Exception);

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using TH69LS_HFT_2023241.Models;
 
 namespace TH69LS_HFT_2023241.Logic
@@ -10,5 +11,6 @@ namespace TH69LS_HFT_2023241.Logic
         Cat_Sitter Read(int ID);
         IQueryable<Cat_Sitter> ReadAll();
         void Update(Cat_Sitter item);
+        public IEnumerable<Cat_Sitter> Mixed();
     }
 }

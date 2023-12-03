@@ -69,5 +69,10 @@ namespace TH69LS_HFT_2023241.Logic
             return seged.Cats.Select(x => x.Cat_Name);
 
         }
+
+        public IEnumerable<Cat_Sitter> Salary()
+        {
+            return this.repo.ReadAll().Where(t => t.Its_salary_month>200000).OrderBy(t => t.Sitter_Name);
+        }
     }
 }
