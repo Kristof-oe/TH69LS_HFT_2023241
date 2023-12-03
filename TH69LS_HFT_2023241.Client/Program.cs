@@ -21,7 +21,7 @@ namespace TH69LS_HFT_2023241.Client
 
             var item = logic.ReadAll();
 
-            var nc = logic.AllCatBreed().ToArray();
+            var nc = logic.Mixed().ToArray();
             var pc=logic.Top3Breed().ToArray();
             ;
         }

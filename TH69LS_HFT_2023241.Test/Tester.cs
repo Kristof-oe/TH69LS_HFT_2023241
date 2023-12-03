@@ -1,4 +1,6 @@
-﻿using Moq;
+﻿using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
+using Moq;
+using NuGet.ContentModel;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -83,6 +85,7 @@ namespace TH69LS_HFT_2023241.Test
                  Cat_Owner_ID=1,
                  Cat_Sitter_ID=1,
                  Cat_Name="Cirmos",
+                 Is_Mixed=true,
                  Breed="Siamese"
                 },
                 new Cat()
@@ -91,6 +94,7 @@ namespace TH69LS_HFT_2023241.Test
                  Cat_Owner_ID=2,
                  Cat_Sitter_ID=1,
                  Cat_Name="Kázmér",
+                 Is_Mixed=false,
                  Breed="Burmese"
                 },
                 new Cat()
@@ -99,6 +103,7 @@ namespace TH69LS_HFT_2023241.Test
                  Cat_Owner_ID=2,
                  Cat_Sitter_ID=2,
                  Cat_Name="Pötyi",
+                 Is_Mixed=true,
                  Breed="Sphynx"
                 },
                 new Cat()
@@ -107,6 +112,7 @@ namespace TH69LS_HFT_2023241.Test
                  Cat_Owner_ID=2,
                  Cat_Sitter_ID=2,
                  Cat_Name="Álmos",
+                 Is_Mixed=false,
                  Breed="Persian"
                 }
             };
@@ -165,11 +171,10 @@ namespace TH69LS_HFT_2023241.Test
             Assert.That(r[0].Owner_Name, Is.EqualTo("Adam"));
         }
         [Test]
-        public void AllCatBreed()
+         public void Mixed()
         {
-            string[] b = new string[] { "Siamese, Burmese, Sphynx, Persian" };
-            var r = catLogic.AllCatBreed().ToArray();
-            Assert.That(r, Is.EqualTo(b));
+            var r= catLogic.Mixed().ToArray();
+            Assert.That(r[0].Cat_Name, Is.EqualTo("Cirmos"));
         }
         [Test]
         public void ReadCatTest()

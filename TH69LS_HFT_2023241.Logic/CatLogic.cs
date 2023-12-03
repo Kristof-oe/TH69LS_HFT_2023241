@@ -55,11 +55,11 @@ namespace TH69LS_HFT_2023241.Logic
             }
             this.repo.Update(item);
         }
-
-        public IEnumerable<string> AllCatBreed()
+        public IEnumerable<Cat> Mixed()
         {
-            return this.repo.ReadAll().Select(x => x.Breed).ToList().Distinct();
+            return this.repo.ReadAll().Where(t => t.Is_Mixed == true).OrderBy(t => t.Cat_Name);
         }
+
 
         public IEnumerable<TopBreed> Top3Breed()
         {
