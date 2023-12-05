@@ -70,6 +70,7 @@ namespace TH69LS_HFT_2023241.Logic
 
         public IEnumerable<Cat_Owner> RetiredPerson()
         {
+
             return this.repo.ReadAll().Where(x => x.Owner_Age > 64).OrderByDescending(x => x.Owner_Age);
         }
 

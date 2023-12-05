@@ -61,7 +61,7 @@ namespace TH69LS_HFT_2023241.Logic
         }
 
 
-        public IEnumerable<TopBreed> Top3Breed()
+        public IEnumerable<TopBreed> Top2Breed()
         {
             var q = from x in repo.ReadAll()
                     group x by x.Breed into g
@@ -70,7 +70,7 @@ namespace TH69LS_HFT_2023241.Logic
                         Breed = g.Key,
                         Count = g.Count()
                     };
-            return q.OrderByDescending(x => x.Count).Take(3).Distinct();
+            return q.OrderByDescending(x => x.Count).Take(2).Distinct();
         }
     }
 

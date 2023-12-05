@@ -12,7 +12,7 @@ namespace TH69LS_HFT_2023241.Logic
         Cat Read(int ID);
         IQueryable<Cat> ReadAll();
         public IEnumerable<Cat> Mixed();
-        IEnumerable<TopBreed> Top3Breed();
+        IEnumerable<TopBreed> Top2Breed();
         void Update(Cat item);
     }
 }

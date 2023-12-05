@@ -11,6 +11,6 @@ namespace TH69LS_HFT_2023241.Logic
         Cat_Sitter Read(int ID);
         IQueryable<Cat_Sitter> ReadAll();
         void Update(Cat_Sitter item);
-        public IEnumerable<Cat_Sitter> Mixed();
+
     }
 }
